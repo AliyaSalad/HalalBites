@@ -2,7 +2,7 @@ import { MaterialIcons} from "@expo/vector-icons";
 
 const Icons = {};
 
-const Add = () => <MaterialIcons name="add" size={16} />;
+const Add = () => <MaterialIcons name="add" size={16} color={'#004226'} />;
 const Delete = () => <MaterialIcons name="delete" size={16} />;
 const Edit = () => <MaterialIcons name="edit" size={16} />;
 

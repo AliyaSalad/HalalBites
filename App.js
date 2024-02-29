@@ -11,26 +11,6 @@ import ProfileScreen from './src/components/screens/ProfileScreen';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-// export const App = () => {
-//   return (
-//     <NavigationContainer> 
-//       <Stack.Navigator 
-//         initialRouteName='RestaurantListScreen'
-//         screenOptions={{
-//           headerStyle: { backgroundColor: 'black' },
-//           headerTintColor: 'white',
-//         }}  
-//       >  
-//         <Stack.Screen
-//           name='RestaurantListScreen'
-//           component={RestaurantListScreen}
-//           options={{ title: 'Recipe list'}}
-//         />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// };
-
 const RestaurantStack = () => (
   <Stack.Navigator
   initialRouteName='RestaurantListScreen'

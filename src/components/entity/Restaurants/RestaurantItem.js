@@ -19,5 +19,8 @@ const styles= StyleSheet.create({
         borderButtonWidth: 1,
         borderColor: 'white',
       },
+      Text: {
+        color: 'white',
+      },
 });
 export default RestaurantItem;
