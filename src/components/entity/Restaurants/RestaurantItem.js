@@ -1,23 +1,22 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 
-const RestaurantItem = ({restaurant, onSelect}) => {
-
+const RestaurantItem = ({restaurant, onselect}) => {
     return (
-        <Pressable onPress={() => onSelect(restaurant)}>
-              <View  style ={styles.item}>
-                <Text style ={styles.Text}>
-                  {restaurant.RestaurantName} 
-                  </Text>
-              </View>
-            </Pressable>
+        <Pressable onPress={() => onselect(restaurant)}>
+            <View style= {styles.item}>
+                <Text style={styles.Text}>{restaurant.RestaurantName}</Text>
+            </View>
+        </Pressable>
     );
 }
+
 const styles= StyleSheet.create({
     item: {
         paddingVertical: 15,
         borderButtonWidth: 1,
-        borderColor: 'white',
-      },
+        borderColor: 'lightgray',
+    },
 });
+
 export default RestaurantItem;

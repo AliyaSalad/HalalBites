@@ -3,8 +3,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import RestaurantListScreen from './src/components/screens/RestaurantListScreen';
 import RestaurantViewScreen from './src/components/screens/RestaurantViewScreen';
-import RestaurantModifyScreen from './src/components/screens/RestaurantModifyScreen';
-import RestaurantAddScreen from './src/components/screens/RestaurantAddSCreen';
 import FavouritesListScreen from './src/components/screens/FavouritesListScreen';
 import ProfileScreen from './src/components/screens/ProfileScreen';
 
@@ -47,16 +45,6 @@ const RestaurantStack = () => (
     <Stack.Screen
       name='RestaurantViewScreen'
       component={RestaurantViewScreen}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name='RestaurantAddScreen'
-      component={RestaurantAddScreen}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name='RestaurantModifyScreen'
-      component={RestaurantModifyScreen}
       options={{ headerShown: false }}
     />
   </Stack.Navigator>

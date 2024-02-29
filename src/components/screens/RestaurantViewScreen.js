@@ -2,26 +2,12 @@ import { StyleSheet, Text } from "react-native";
 import Screen from "../layout/Screen";
 import RestaurantView from "../entity/Restaurants/RestaurantView";
 
-const RestaurantViewScreen = ({ navigation, route}) => {
-
-    //Initialisations
-      const { restaurant, onDelete, onModify} = route.params;
-    
-    //State
-    
-    //Handlers
-    const goToModifyScreen = () => navigation.navigate('RestaurantModifyScreen', {restaurant, onModify});
-    
-    //View
-      return (
+const RestaurantViewScreen = () => {
+    return (
         <Screen>
-          <RestaurantView restaurant={restaurant} onDelete={onDelete} onModify={goToModifyScreen}/>
+            <RestaurantView />
         </Screen>
-      );
-    };
-    
-    const styles = StyleSheet.create({});
-    
-    
+    );
+};
 
 export default RestaurantViewScreen;
