@@ -1,20 +1,37 @@
-import { StyleSheet, Text, View } from "react-native";
-import FullWidthImage from 'react-native-fullwidth-image';
+import { Alert, StyleSheet, Text, View } from "react-native";
+import FullWidthImage from "react-native-fullwidth-image";
+import { Button, ButtonTray } from "../../UI/Buttons.js";
+import Icons from "../../UI/Icons";
 
+const RestaurantView = ({ restaurant, onDelete, onModify }) => {
+//Initialisation
+//State
+//Handlers
 
-const RestaurantView = (restaurant) => {
+    const handleDelete= () => onDelete(restaurant);
 
+    const requestDelete = () => Alert.alert(
+        'Delete warning',
+        `Are you sure that you want to delete Restaurant ${restaurant.RestaurantId} ${restaurant.RestaurantName}`,
+        [
+            {text: 'Cancel' },
+            {text: 'Delete', onPress: handleDelete }
+        ]
+    );
+
+    //View
     return (
         <View style={styles.container}>
-            <FullWidthImage 
-            source={{uri: restaurant.RestaurantImage }}
-            style={styles.image}
-            /> 
-            <View>
-                <Text style={styles.text}> 
+            <View style={styles.infoTray}>
+                <Text style={styles.boldText}>
+                    {restaurant.RestaurantId}
                     {restaurant.RestaurantName}
                 </Text>
             </View>
+            <ButtonTray>
+                <Button icon={<Icons.Edit />} label="Modify" onClick={onModify} />
+                <Button icon={<Icons.Delete />} label="Delete"  onClick={requestDelete}/>
+            </ButtonTray>
         </View>
     );
 };
@@ -27,11 +44,20 @@ const styles = StyleSheet.create({
         borderRadius: 3,
     
     },
+    infoTray: {
+        gap: 5,
+    },
     text: {
         fontSize: 16,
         fontWeight: "bold",
     },
+    boldText:{
+        fontSize: 16,
+        fontWeight: "bold",
+    },
+    dimText: {
+        color: "grey",
+    },
 });
-
 
 export default RestaurantView;

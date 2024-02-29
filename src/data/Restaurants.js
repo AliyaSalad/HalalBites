@@ -1,15 +1,11 @@
-import Wingstop from '../components/UI/Images/Wingstop.png'
-
-const Restaurants = [
+const restaurants = [
     {
         RestaurantId: 1,
         RestaurantName: 'Wingstop',
-        RestaurantImage: {Wingstop}
     },
     {
         RestaurantId: 2,
         RestaurantName: 'Chilli cha cha',
-        RestaurantImage: 'null'
     },
     {
         RestaurantId: 3,
@@ -20,4 +16,4 @@ const Restaurants = [
         RestaurantName: 'Nandos',
     },
 ];
-export default Restaurants;
+export default restaurants;
