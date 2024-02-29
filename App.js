@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import RestaurantListScreen from './src/components/screens/RestaurantListScreen'
+import RestaurantListScreen from './src/components/screens/RestaurantListScreen';
 import RestaurantViewScreen from './src/components/screens/RestaurantViewScreen';
 import RestaurantModifyScreen from './src/components/screens/RestaurantModifyScreen';
 import RestaurantAddScreen from './src/components/screens/RestaurantAddScreen';
