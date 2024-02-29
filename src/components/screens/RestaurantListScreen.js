@@ -3,7 +3,7 @@ import Screen from '../layout/Screen';
 import initialRestaurants from '../../data/Restaurants';
 import RestaurantList from '../entity/Restaurants/RestaurantList';
 import { useState } from 'react';
-import { Button, ButtonTray } from "../UI/Buttons";
+import { Button, ButtonTray, CircularButton, CircularButtonTray } from "../UI/Buttons";
 import Icons from "../UI/Icons";
 
 
@@ -49,6 +49,12 @@ const RestaurantListScreen = ({ navigation }) => {
       <ButtonTray>
         <Button label = "Add" icon={<Icons.Add />} onClick={goToAddScreen} />
       </ButtonTray>
+      <CircularButtonTray>
+        <CircularButton text = "Breakfast"/>
+        <CircularButton text = "Lunch"/>
+        <CircularButton text = "Dinner"/>
+        <CircularButton text = "Dessert"/>
+      </CircularButtonTray>
       <RestaurantList restaurants={restaurants} onSelect={goToViewScreen} />
     </Screen>
   );

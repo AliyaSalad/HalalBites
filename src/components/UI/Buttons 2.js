@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 export const Button = ({ label, onClick, icon}) => {
 
@@ -11,32 +11,20 @@ export const Button = ({ label, onClick, icon}) => {
     );
 };
 
-// export const CircularButton = ({ text, onClick, icon}) => {
-
-//     return (
-
-//         <Pressable onPress={onClick} style={styles.circularButton}>
-//             {icon ? icon : null}
-//             <Text style={styles.text}>{text}</Text>
-//         </Pressable>
-//     );
-// };
-
-export const CircularButton = ({ text, onClick, icon }) => {
+export const CircularButton = ({text, onClick, icon}) => {
+    
     return (
-        <TouchableOpacity onPress={onClick} style={styles.circularButton}>
-            <View style={styles.circle}>
-                {icon ? icon : null}
-            </View>
+
+        <Pressable onPress={onClick} style={styles.CircularButton}>
+            {icon ? icon : null}
             <Text style={styles.text}>{text}</Text>
-        </TouchableOpacity>
+        </Pressable>
     );
-};
+}
 
 
 export const ButtonTray = ({ children }) => {
     return (
-
         <View style={styles.buttonTray}>{children}</View>
     );
 };
@@ -55,15 +43,15 @@ const styles = StyleSheet.create({
     circularButtonTray:{
         flexDirection: "row",
         justifyContent: 'center',
+        gap: 5,
         marginBottom: 20,
-        gap: 15,
     },
     button: {
         minHeight: 50,
         borderWidth: 1,
         borderRadius: 10,
         borderColor: "black",
-        backgroundColor: "#FFD166",
+        backgroundColor: "gray",
         alignItems: "center",
         justifyContent: "center",
         padding: 5,
@@ -72,29 +60,21 @@ const styles = StyleSheet.create({
         gap: 5,
 
     },
-    circle: {
-        width: 70,
-        height: 70,
-        borderRadius: 45,
-        borderColor: "white",
-        backgroundColor: "white",
-        alignItems: "center",
-        justifyContent: "center",
-        marginTop: 10,
-    },
-    circularButton: {
-        alignItems:'center',
+    CircularButton: {
+        width: 90,
+        height: 50,
+        borderRadius: 25,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     label: {
         fontSize: 16,
-        fontWeight: '500',
-        color: '#004226',
     },
     text: {
-        fontSize: 14,
-        fontWeight: '500',
+        fontSize: 18,
+       // fontWeight: bold,
         color: '#FFD166',
-        marginTop: 10,
     },
 });
 
