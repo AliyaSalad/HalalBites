@@ -4,8 +4,10 @@ import Screen from "../layout/Screen";
 
 const WelcomeScreen = ({navigation}) => {
 
+
     const goToUserList = () => {navigation.navigate("UserListScreen")};
     const goToAdminList = () => {navigation.navigate("AdminListScreen")};
+
 
     return(
         <Screen>
@@ -16,11 +18,13 @@ const WelcomeScreen = ({navigation}) => {
                 <WelcomeButtonTray>
                     <WelcomeButton 
                     label='User' 
+
                     onClick={goToUserList}
                     />
                     <WelcomeButton 
                     label='Admin'
                     onClick={goToAdminList}
+
                     />
                 </WelcomeButtonTray>
 
