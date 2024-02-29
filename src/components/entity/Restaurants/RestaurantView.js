@@ -19,22 +19,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
         ]
     );
 
-    //View
-    // return (
-    //     <View style={styles.container}>
-    //         <View style={styles.infoTray}>
-    //             <Text style={styles.boldText}>
-    //                 {restaurant.RestaurantId}
-    //                 {restaurant.RestaurantName}
-    //             </Text>
-    //         </View>
-    //         <ButtonTray>
-    //             <Button icon={<Icons.Edit />} label="Modify" onClick={onModify} />
-    //             <Button icon={<Icons.Delete />} label="Delete"  onClick={requestDelete}/>
-    //         </ButtonTray>
-    //     </View>
-    // );
-
+   
     return (
             <View style={styles.container}>
                 {restaurant.RestuarantImage ? (

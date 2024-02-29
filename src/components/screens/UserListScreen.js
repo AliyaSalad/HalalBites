@@ -3,11 +3,11 @@ import Screen from '../layout/Screen';
 import initialRestaurants from '../../data/Restaurants';
 import RestaurantList from '../entity/Restaurants/RestaurantList';
 import { useState } from 'react';
-import { Button, ButtonTray, CircularButton, CircularButtonTray } from "../UI/Buttons";
-import Icons from "../UI/Icons";
+import { CircularButton, CircularButtonTray } from "../UI/Buttons";
 
 
-const RestaurantListScreen = ({ navigation }) => {
+
+const UserListScreen = ({ navigation }) => {
 
   //Initialisations
   LogBox.ignoreLogs([`Non-serializable values were found in the navigation state`]);
@@ -37,7 +37,7 @@ const RestaurantListScreen = ({ navigation }) => {
 
   const onModify = (restaurant) => {
     handleModify(restaurant);
-    navigation.navigate("RestaurantListScreen");
+    navigation.navigate("UserListScreen");
   };
   
   const goToViewScreen = (restaurant) => navigation.navigate("RestaurantViewScreen", { restaurant, onDelete, onModify });
@@ -46,9 +46,6 @@ const RestaurantListScreen = ({ navigation }) => {
 
   return (
     <Screen>
-      <ButtonTray>
-        <Button label = "Add" icon={<Icons.Add />} onClick={goToAddScreen} />
-      </ButtonTray>
       <CircularButtonTray>
         <CircularButton text = "Breakfast"/>
         <CircularButton text = "Lunch"/>
@@ -63,4 +60,4 @@ const RestaurantListScreen = ({ navigation }) => {
   });
 };
 
-export default RestaurantListScreen;
+export default UserListScreen;
