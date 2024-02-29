@@ -1,50 +1,60 @@
-import {StatusBar } from 'expo-status-bar';
-import {Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { useState } from 'react';
-import initialRestaurants from '../../data/Restaurants';
+import { LogBox, StyleSheet } from 'react-native';
 import Screen from '../layout/Screen';
+import initialRestaurants from '../../data/Restaurants';
+import RestaurantList from '../entity/Restaurants/RestaurantList';
+import { useState } from 'react';
+import { Button, ButtonTray } from "../UI/Buttons";
+import Icons from "../UI/Icons";
 
-const RestaurantListScreen= ({navigation}) => {
-    //Initialisations
-    const [recipes, setRecipes] = useState(initialRestaurants);
-    //State
-    //Handlers
-//    const handleSelect =  () => alert('Item selected');
-    //View 
 
-    const goToViewScreen = (restaurant) => navigation.navigate("RestaurantViewScreen", { restaurant });
+const RestaurantListScreen = ({ navigation }) => {
+
+  //Initialisations
+  LogBox.ignoreLogs([`Non-serializable values were found in the navigation state`]);
   
+  //State
+  const [restaurants, setRestaurants ]= useState(initialRestaurants);
+  
+  
+  //Handlers
+  const handleDelete = (restaurant) =>
+    setRestaurants(restaurants.filter((item) => item.RestaurantId !== restaurant.RestaurantId));
+  
+  const handleAdd = (restaurant) => setRestaurants([...restaurants, restaurant]);
+  const handleModify = (updatedRestaurant) => setRestaurants(
+    restaurants.map((restaurant) => (restaurant.RestaurantId === updatedRestaurant.RestaurantId) ? updatedRestaurant : restaurant)
+  );
 
-    return (
-        <Screen>
-            <ScrollView style={styles.container}>
-                {recipes.map((recipe)=>{
-                    return(
-                        <Pressable key={recipe.RestaurantId} onPress={goToViewScreen}>
-                            <View  style={styles.item}>
-                                <Text style={styles.text}>
-                                    {recipe.RestaurantName}
-                                </Text>
-                            </View>
-                        </Pressable>
-                    );
-                })}
-            </ScrollView>
-        </Screen>
-    );
-};
+  const onDelete = (restaurant) => {
+    handleDelete(restaurant);
+    navigation.goBack();
+  };
 
-const styles = StyleSheet.create({
+  const onAdd = (restaurant) => {
+    handleAdd(restaurant);
+    navigation.goBack();
+  };
+
+  const onModify = (restaurant) => {
+    handleModify(restaurant);
+    navigation.navigate("RestaurantListScreen");
+  };
+  
+  const goToViewScreen = (restaurant) => navigation.navigate("RestaurantViewScreen", { restaurant, onDelete, onModify });
+  const goToAddScreen = () => navigation.navigate('RestaurantAddScreen', { onAdd });
+
+
+  return (
+    <Screen>
+      <ButtonTray>
+        <Button label = "Add" icon={<Icons.Add />} onClick={goToAddScreen} />
+      </ButtonTray>
+      <RestaurantList restaurants={restaurants} onSelect={goToViewScreen} />
+    </Screen>
+  );
+  const styles = StyleSheet.create({
     container: {},
-    item: {
-        paddingVertical: 15,
-        borderTopWidth: 1,
-        borderColor: 'lightgray',
-    },
-    text: {
-        fontSize: 16,
-        color: 'white',
-    },
-});
+  });
+};
 
 export default RestaurantListScreen;
