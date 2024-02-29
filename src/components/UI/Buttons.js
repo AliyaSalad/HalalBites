@@ -23,6 +23,7 @@ export const WelcomeButton = ({ label, onClick, icon}) => {
 };
 
 
+
 // export const CircularButton = ({ text, onClick, icon}) => {
 
 //     return (
@@ -53,12 +54,14 @@ export const ButtonTray = ({ children }) => {
     );
 };
 
+
 export const WelcomeButtonTray = ({ children }) => {
     return (
 
         <View style={styles.welcomeButtonTray}>{children}</View>
     );
 };
+
 
 export const CircularButtonTray = ({ children }) => {
     return (
@@ -77,12 +80,14 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         gap: 15,
     },
+
     welcomeButtonTray:{
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 20,
     },
+
     button: {
         minHeight: 50,
         borderWidth: 1,
@@ -97,6 +102,7 @@ const styles = StyleSheet.create({
         gap: 5,
 
     },
+
     welcomeButton: {
         width: 200,
         height: 50,
@@ -109,6 +115,7 @@ const styles = StyleSheet.create({
         padding: 5,
         marginBottom: 10,
     },
+
     circle: {
         width: 70,
         height: 70,
