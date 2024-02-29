@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         borderColor: "black",
-        backgroundColor: "gray",
+        backgroundColor: "#FFD166",
         alignItems: "center",
         justifyContent: "center",
         padding: 5,
@@ -40,6 +40,8 @@ const styles = StyleSheet.create({
     },
     label: {
         fontSize: 16,
+        fontWeight: '500',
+        color: '#004226',
     },
 });
 

@@ -4,32 +4,14 @@ import {createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import RestaurantListScreen from './src/components/screens/RestaurantListScreen'
 import RestaurantViewScreen from './src/components/screens/RestaurantViewScreen';
 import RestaurantModifyScreen from './src/components/screens/RestaurantModifyScreen';
-import RestaurantAddScreen from './src/components/screens/RestaurantAddScreen'
+
+import RestaurantAddScreen from './src/components/screens/RestaurantAddScreen';
+
 import FavouritesListScreen from './src/components/screens/FavouritesListScreen';
 import ProfileScreen from './src/components/screens/ProfileScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
-// export const App = () => {
-//   return (
-//     <NavigationContainer> 
-//       <Stack.Navigator 
-//         initialRouteName='RestaurantListScreen'
-//         screenOptions={{
-//           headerStyle: { backgroundColor: 'black' },
-//           headerTintColor: 'white',
-//         }}  
-//       >  
-//         <Stack.Screen
-//           name='RestaurantListScreen'
-//           component={RestaurantListScreen}
-//           options={{ title: 'Recipe list'}}
-//         />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// };
 
 const RestaurantStack = () => (
   <Stack.Navigator
