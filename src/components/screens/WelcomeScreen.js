@@ -1,49 +1,48 @@
-import { StyleSheet, View, Text } from "react-native";
-import { WelcomeButton, WelcomeButtonTray } from "../UI/Buttons";
-import Screen from "../layout/Screen";
+import React from 'react';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import Screen from '../layout/Screen';
 
-const WelcomeScreen = ({navigation}) => {
-
-
-    const goToUserList = () => {navigation.navigate("UserListScreen")};
-    const goToAdminList = () => {navigation.navigate("AdminListScreen")};
+const WelcomeScreen = ({ navigation }) => {
 
 
-    return(
-        <Screen>
-            <View>
-                <Text style={styles.title}>Halal Bites</Text>
-            </View>
-            <View style={styles.container}>
-                <WelcomeButtonTray>
-                    <WelcomeButton 
-                    label='User' 
+  const goToUserList = () => { navigation.navigate("UserListScreen") };
+  const goToAdminList = () => { navigation.navigate("AdminListScreen") };
 
-                    onClick={goToUserList}
-                    />
-                    <WelcomeButton 
-                    label='Admin'
-                    onClick={goToAdminList}
+  return (
+    <Screen>
+      <View style={styles.container}>
+        <Text style={styles.title}>Halal Bites</Text>
+        <View style={styles.buttonContainer}>
+          <Button
+            title='User'
+            onPress={goToUserList}
+          />
+          <Button
+            title='Admin'
+            onPress={goToAdminList}
+          />
+        </View>
+      </View>
+    </Screen>
+  );
 
-                    />
-                </WelcomeButtonTray>
-
-            </View>
-        </Screen>
-    );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    title: {
-        fontSize: 40,
-        color: '#FFD166',
-        textAlign: 'center',
-        fontWeight: 'bold',
-    },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 40,
+    color: '#FFD166',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  buttonContainer: {
+    marginTop: 20,
+  },
 });
+
 export default WelcomeScreen;
