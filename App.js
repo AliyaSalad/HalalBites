@@ -1,10 +1,12 @@
-import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import {createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import UserListScreen from './src/components/screens/UserListScreen';
 import AdminListScreen from './src/components/screens/AdminListScreen';
+
+
 import RestaurantViewScreen from './src/components/screens/RestaurantViewScreen';
 import RestaurantModifyScreen from './src/components/screens/RestaurantModifyScreen';
 import RestaurantAddScreen from './src/components/screens/RestaurantAddScreen';
@@ -44,6 +46,7 @@ const AdminTabNavigator = () => (
       },
     }}
   >
+
     <AdminTab.Screen name='Restaurants' component={AdminListScreen} />
     <AdminTab.Screen name='Favourites' component={FavouritesListScreen} />
     <AdminTab.Screen name='Profile' component={ProfileScreen} />
@@ -51,7 +54,12 @@ const AdminTabNavigator = () => (
 );
 
 
-const App = () => {
+
+
+    
+ 
+ const App = () => {
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='WelcomeScreen'>
@@ -90,4 +98,32 @@ const App = () => {
   );
 };
 
+
+
+// export const App = () => {
+//   return (
+//     <NavigationContainer>
+//       <Stack.Navigator
+//       screenOptions={{
+//         headerTitle: 'Halal Bites',
+//         headerStyle: {backgroundColor: '#004226' },
+//         headerTintColor: '#FFD166',
+//         headerTitleStyle: {
+//           fontWeight: 'bold'
+//         }
+//       }}
+//       >
+//         <Tab.Navigator>
+//           <Tab.Screen name='Restaurants' component={UserStack} />
+//           <Tab.Screen name='Favourites' component={FavouritesListScreen} />
+//           <Tab.Screen name='Profile' component={ProfileScreen} />
+//         </Tab.Navigator>
+//       </Stack.Navigator>
+//     </NavigationContainer>
+//   );
+// };
+
+
+
 export default App;
+

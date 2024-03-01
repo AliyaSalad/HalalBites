@@ -4,6 +4,7 @@ import Screen from '../layout/Screen';
 
 const WelcomeScreen = ({ navigation }) => {
 
+
   const goToUserList = () => { navigation.navigate("UserListScreen") };
   const goToAdminList = () => { navigation.navigate("AdminListScreen") };
 
@@ -24,6 +25,7 @@ const WelcomeScreen = ({ navigation }) => {
       </View>
     </Screen>
   );
+
 };
 
 const styles = StyleSheet.create({
