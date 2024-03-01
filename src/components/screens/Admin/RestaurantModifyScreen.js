@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import Screen from "../layout/Screen.js";
-import RestaurantForm from "../entity/Restaurants/RestaurantForm.js";
+import Screen from "../../layout/Screen.js";
+import RestaurantForm from "../../entity/Admin/RestaurantForm";
 
 const RestaurantModifyScreen = ({ navigation, route }) => {
   //Initialisation----------------------------------------
