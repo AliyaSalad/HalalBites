@@ -1,8 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import UserListScreen from './src/components/screens/UserListScreen';
 import AdminListScreen from './src/components/screens/AdminListScreen';
+
 import RestaurantViewScreen from './src/components/screens/RestaurantViewScreen';
 import RestaurantModifyScreen from './src/components/screens/RestaurantModifyScreen';
 import RestaurantAddScreen from './src/components/screens/RestaurantAddScreen';
@@ -27,6 +29,7 @@ const UserStack = () => (
       options={{headerShown: false  }}
     />
     <Stack.Screen
+
       name='UserListScreen'
       component={UserListScreen}
       options={{headerShown: false  }}
@@ -34,6 +37,7 @@ const UserStack = () => (
     <Stack.Screen
       name='AdminListScreen'
       component={AdminListScreen}
+
       options={{headerShown: false  }}
     />
     <Stack.Screen
