@@ -13,10 +13,11 @@ import ProfileScreen from './src/components/screens/ProfileScreen';
 import WelcomeScreen from './src/components/screens/WelcomeScreen';
 
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+const UserTab = createBottomTabNavigator();
+const AdminTab = createBottomTabNavigator();
 
-const TabNavigator = () => (
-  <Tab.Navigator
+const UserTabNavigator = () => (
+  <UserTab.Navigator
     screenOptions={{
       headerTitle: 'Halal Bites',
       headerStyle: { backgroundColor: '#004226' },
@@ -26,11 +27,29 @@ const TabNavigator = () => (
       },
     }}
   >
-    <Tab.Screen name='Restaurants' component={UserListScreen} />
-    <Tab.Screen name='Favourites' component={FavouritesListScreen} />
-    <Tab.Screen name='Profile' component={ProfileScreen} />
-  </Tab.Navigator>
+    <UserTab.Screen name='Restaurants' component={UserListScreen} />
+    <UserTab.Screen name='Favourites' component={FavouritesListScreen} />
+    <UserTab.Screen name='Profile' component={ProfileScreen} />
+  </UserTab.Navigator>
 );
+
+const AdminTabNavigator = () => (
+  <AdminTab.Navigator
+    screenOptions={{
+      headerTitle: 'Halal Bites',
+      headerStyle: { backgroundColor: '#004226' },
+      headerTintColor: '#FFD166',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }}
+  >
+    <AdminTab.Screen name='Restaurants' component={AdminListScreen} />
+    <AdminTab.Screen name='Favourites' component={FavouritesListScreen} />
+    <AdminTab.Screen name='Profile' component={ProfileScreen} />
+  </AdminTab.Navigator>
+);
+
 
 const App = () => {
   return (
@@ -43,27 +62,27 @@ const App = () => {
         />
         <Stack.Screen
           name='UserListScreen'
-          component={TabNavigator}
+          component={UserTabNavigator}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name='AdminListScreen'
-          component={TabNavigator}
+          component={AdminTabNavigator}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name='RestaurantViewScreen'
-          component={TabNavigator}
+          component={RestaurantViewScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name='RestaurantAddScreen'
-          component={TabNavigator}
+          component={RestaurantAddScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name='RestaurantModifyScreen'
-          component={TabNavigator}
+          component={RestaurantModifyScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
