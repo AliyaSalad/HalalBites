@@ -1,3 +1,4 @@
+
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -11,6 +12,7 @@ import RestaurantAddScreen from "./src/components/screens/Admin/RestaurantAddScr
 import FavouritesListScreen from "./src/components/screens/User/FavouritesListScreen";
 import ProfileScreen from "./src/components/screens/User/ProfileScreen";
 import WelcomeScreen from "./src/components/screens/WelcomeScreen";
+
 
 const Stack = createNativeStackNavigator();
 const UserTab = createBottomTabNavigator();
