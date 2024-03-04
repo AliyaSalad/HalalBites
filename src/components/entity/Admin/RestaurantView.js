@@ -23,6 +23,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
         <FullWidthImage style={styles.image} />
       ) : null}
 
+
       <ButtonTray>
         <Button icon={<Icons.Edit />} label="Modify" onClick={onModify} />
         <Button

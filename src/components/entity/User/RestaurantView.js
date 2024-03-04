@@ -11,6 +11,7 @@ const RestaurantView = ({ restaurant }) => {
       {restaurant.RestuarantImage ? (
         <FullWidthImage style={styles.image} />
       ) : null}
+
     </View>
   );
 };
