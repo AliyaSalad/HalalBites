@@ -1,4 +1,3 @@
-
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -30,7 +29,6 @@ const UserTabNavigator = () => (
       },
     }}
   >
-
     <Tab.Screen name="Restaurants" component={UserListScreen} />
     <Tab.Screen name="Favourites" component={FavouritesListScreen} />
     <Tab.Screen
@@ -39,7 +37,6 @@ const UserTabNavigator = () => (
       component={ProfileScreen}
     />
   </Tab.Navigator>
-
 );
 
 const AdminTabNavigator = () => (
@@ -53,12 +50,10 @@ const AdminTabNavigator = () => (
       },
     }}
   >
-
     <Tab.Screen name="Restaurants" component={AdminRestaurantListScreen} />
     <Tab.Screen name="Favourites" component={FavouritesListScreen} />
     <Tab.Screen name="Profile" component={ProfileScreen} />
   </Tab.Navigator>
-
 );
 
 const App = () => {
@@ -83,7 +78,6 @@ const App = () => {
         <Stack.Screen
           name="UserRestaurantViewScreen"
           component={UserRestaurantViewScreen}
-
           options={{
             headerTitle: "Restaurant Details",
             headerStyle: {
@@ -106,7 +100,6 @@ const App = () => {
           }}
         />
         <Stack.Screen
-
           name="RestaurantAddScreen"
           component={RestaurantAddScreen}
           options={{ headerShown: false }}
