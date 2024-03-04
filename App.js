@@ -1,4 +1,3 @@
-
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -12,14 +11,14 @@ import RestaurantAddScreen from "./src/components/screens/Admin/RestaurantAddScr
 import FavouritesListScreen from "./src/components/screens/User/FavouritesListScreen";
 import ProfileScreen from "./src/components/screens/User/ProfileScreen";
 import WelcomeScreen from "./src/components/screens/WelcomeScreen";
-
+import Icons from "./src/components/UI/Icons";
+import restaurants from "./src/data/Restaurants";
 
 const Stack = createNativeStackNavigator();
-const UserTab = createBottomTabNavigator();
-const AdminTab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 const UserTabNavigator = () => (
-  <UserTab.Navigator
+  <Tab.Navigator
     screenOptions={{
       headerTitle: "Halal Bites",
       headerStyle: { backgroundColor: "#004226" },
@@ -29,14 +28,18 @@ const UserTabNavigator = () => (
       },
     }}
   >
-    <UserTab.Screen name="Restaurants" component={UserListScreen} />
-    <UserTab.Screen name="Favourites" component={FavouritesListScreen} />
-    <UserTab.Screen name="Profile" component={ProfileScreen} />
-  </UserTab.Navigator>
+    <Tab.Screen name="Restaurants" component={UserListScreen} />
+    <Tab.Screen name="Favourites" component={FavouritesListScreen} />
+    <Tab.Screen
+      tabBarIcon={<Icons.Account />}
+      name="Profile"
+      component={ProfileScreen}
+    />
+  </Tab.Navigator>
 );
 
 const AdminTabNavigator = () => (
-  <AdminTab.Navigator
+  <Tab.Navigator
     screenOptions={{
       headerTitle: "Halal Bites",
       headerStyle: { backgroundColor: "#004226" },
@@ -46,10 +49,10 @@ const AdminTabNavigator = () => (
       },
     }}
   >
-    <AdminTab.Screen name="Restaurants" component={AdminRestaurantListScreen} />
-    <AdminTab.Screen name="Favourites" component={FavouritesListScreen} />
-    <AdminTab.Screen name="Profile" component={ProfileScreen} />
-  </AdminTab.Navigator>
+    <Tab.Screen name="Restaurants" component={AdminRestaurantListScreen} />
+    <Tab.Screen name="Favourites" component={FavouritesListScreen} />
+    <Tab.Screen name="Profile" component={ProfileScreen} />
+  </Tab.Navigator>
 );
 
 const App = () => {
@@ -74,12 +77,26 @@ const App = () => {
         <Stack.Screen
           name="UserRestaurantViewScreen"
           component={UserRestaurantViewScreen}
-          options={{ headerShown: false }}
+          options={{
+            headerTitle: "Restaurant Details",
+            headerStyle: {
+              backgroundColor: "#004226",
+            },
+            headerTintColor: "#FFD166",
+            headerTitleStyle: { fontWeight: "bold" },
+          }}
         />
         <Stack.Screen
           name="AdminRestaurantViewScreen"
           component={AdminRestaurantViewScreen}
-          options={{ headerShown: false }}
+          options={{
+            headerTitle: "Restaurant Details",
+            headerStyle: {
+              backgroundColor: "#004226",
+            },
+            headerTintColor: "#FFD166",
+            headerTitleStyle: { fontWeight: "bold" },
+          }}
         />
         <Stack.Screen
           name="RestaurantAddScreen"
