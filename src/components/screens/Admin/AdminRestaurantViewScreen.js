@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
+
 import Screen from "../../layout/Screen";
 import RestaurantView from "../../entity/Admin/RestaurantView";
 
 const AdminRestaurantViewScreen = ({ navigation, route }) => {
   //Initialisations
   const { restaurant, onDelete, onModify } = route.params;
+
 
   const Header = () => {
     return (
@@ -13,6 +15,7 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
       </View>
     );
   };
+
   //State
 
   //Handlers
@@ -22,7 +25,9 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
   //View
   return (
     <Screen>
+
       <Header />
+
       <RestaurantView
         restaurant={restaurant}
         onDelete={onDelete}
@@ -31,6 +36,7 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
     </Screen>
   );
 };
+
 
 const styles = StyleSheet.create({
   header: {
@@ -47,5 +53,6 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
 });
+
 
 export default AdminRestaurantViewScreen;

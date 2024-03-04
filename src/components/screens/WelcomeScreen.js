@@ -1,7 +1,9 @@
+
 import { StyleSheet, View, Text } from "react-native";
 import Screen from "../layout/Screen";
 import { WelcomeButton, WelcomeButtonTray } from "../UI/Buttons";
 import Icons from "../UI/Icons";
+
 
 const WelcomeScreen = ({ navigation }) => {
   const goToUserList = () => {
@@ -15,11 +17,13 @@ const WelcomeScreen = ({ navigation }) => {
     <Screen>
       <View style={styles.container}>
         <Text style={styles.title}>Halal Bites</Text>
+
         <View>
           <WelcomeButtonTray>
             <WelcomeButton label="User" onClick={goToUserList} />
             <WelcomeButton label="Admin" onClick={goToAdminList} />
           </WelcomeButtonTray>
+
         </View>
       </View>
     </Screen>
