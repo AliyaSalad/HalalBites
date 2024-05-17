@@ -1,4 +1,3 @@
-
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -12,6 +11,8 @@ import RestaurantAddScreen from "./src/components/screens/Admin/RestaurantAddScr
 import FavouritesListScreen from "./src/components/screens/User/FavouritesListScreen";
 import ProfileScreen from "./src/components/screens/User/ProfileScreen";
 import WelcomeScreen from "./src/components/screens/WelcomeScreen";
+import LoginScreen from "./src/components/screens/LoginScreen";
+import SignUpScreen from "./src/components/screens/SignUpScreen";
 
 import Icons from "./src/components/UI/Icons";
 import restaurants from "./src/data/Restaurants";
@@ -30,7 +31,6 @@ const UserTabNavigator = () => (
       },
     }}
   >
-
     <Tab.Screen name="Restaurants" component={UserListScreen} />
     <Tab.Screen name="Favourites" component={FavouritesListScreen} />
     <Tab.Screen
@@ -39,7 +39,6 @@ const UserTabNavigator = () => (
       component={ProfileScreen}
     />
   </Tab.Navigator>
-
 );
 
 const AdminTabNavigator = () => (
@@ -53,12 +52,10 @@ const AdminTabNavigator = () => (
       },
     }}
   >
-
     <Tab.Screen name="Restaurants" component={AdminRestaurantListScreen} />
     <Tab.Screen name="Favourites" component={FavouritesListScreen} />
     <Tab.Screen name="Profile" component={ProfileScreen} />
   </Tab.Navigator>
-
 );
 
 const App = () => {
@@ -68,6 +65,16 @@ const App = () => {
         <Stack.Screen
           name="WelcomeScreen"
           component={WelcomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SignUpScreen"
+          component={SignUpScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -83,7 +90,6 @@ const App = () => {
         <Stack.Screen
           name="UserRestaurantViewScreen"
           component={UserRestaurantViewScreen}
-
           options={{
             headerTitle: "Restaurant Details",
             headerStyle: {
@@ -106,7 +112,6 @@ const App = () => {
           }}
         />
         <Stack.Screen
-
           name="RestaurantAddScreen"
           component={RestaurantAddScreen}
           options={{ headerShown: false }}
