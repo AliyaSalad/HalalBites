@@ -41,6 +41,9 @@ const WelcomeScreen = ({ navigation }) => {
   const LoginScreen = () => {
     navigation.navigate("LoginScreen");
   };
+  const AdminListScreen = () => {
+    navigation.navigate("AdminListScreen");
+  };
   return (
     <Screen>
       <SafeAreaView>
@@ -55,12 +58,16 @@ const WelcomeScreen = ({ navigation }) => {
             />
           </View>
           <WelcomeButtonTray>
-            <WelcomeButton label="Sign Up" onClick={SignUpScreen} />
+            <WelcomeButton label="Log In" onClick={LoginScreen} />
+            <WelcomeButton
+              label="Continue as guest"
+              onClick={AdminListScreen}
+            />
           </WelcomeButtonTray>
           <View style={styles.account}>
-            <Text style={styles.text}>Already have an account?</Text>
-            <TouchableOpacity onPress={() => navigation.navigate(LoginScreen)}>
-              <Text style={styles.logIn}> Log In </Text>
+            <Text style={styles.text}>Don't have an account?</Text>
+            <TouchableOpacity onPress={() => navigation.navigate(SignUpScreen)}>
+              <Text style={styles.logIn}> Sign Up </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -84,7 +91,7 @@ const styles = StyleSheet.create({
   },
   image: {
     marginTop: 60,
-    marginBottom: 50,
+    marginBottom: 20,
     borderRadius: 350,
     width: 350,
     height: 350,

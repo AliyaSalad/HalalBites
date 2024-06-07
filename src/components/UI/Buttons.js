@@ -24,6 +24,10 @@ export const WelcomeButton = ({ label, onClick, icon }) => {
   );
 };
 
+export const WelcomeButtonTray = ({ children }) => {
+  return <View style={styles.welcomeButtonTray}>{children}</View>;
+};
+
 // export const CircularButton = ({ text, onClick, icon}) => {
 
 //     return (
@@ -46,10 +50,6 @@ export const CircularButton = ({ text, onClick, icon }) => {
 
 export const ButtonTray = ({ children }) => {
   return <View style={styles.buttonTray}>{children}</View>;
-};
-
-export const WelcomeButtonTray = ({ children }) => {
-  return <View style={styles.welcomeButtonTray}>{children}</View>;
 };
 
 export const CircularButtonTray = ({ children }) => {
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderWidth: 1,
     borderRadius: 10,
-    borderColor: "black",
+    borderColor: "#FFD166",
     backgroundColor: "#FFD166",
     alignItems: "center",
     justifyContent: "center",

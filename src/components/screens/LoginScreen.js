@@ -1,7 +1,19 @@
-import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import Form from "../UI/Form";
 import Screen from "../layout/Screen";
+import { WelcomeButton, WelcomeButtonTray } from "../UI/Buttons";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
+  const SignUpScreen = () => {
+    navigation.navigate("SignUpScreen");
+  };
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
@@ -13,8 +25,34 @@ export default function LoginScreen() {
             style={styles.image}
           />
         </View>
-        <View style={styles.logIn}>
-          <View></View>
+        <View style={styles.input}>
+          <View style={styles.inputfields}>
+            <Form.InputText
+              label="Email Address"
+              placeholder="Enter Email"
+              value="janedoe@gmail.com"
+              style={styles.label}
+            />
+            <Form.InputText
+              label="Password"
+              secureTextEntry={true}
+              placeholder="Enter Password"
+              value="123456"
+              style={styles.label}
+            />
+            <TouchableOpacity>
+              <Text style={styles.text}> Forgot Password?</Text>
+            </TouchableOpacity>
+            <WelcomeButtonTray>
+              <WelcomeButton label="Log In" />
+            </WelcomeButtonTray>
+          </View>
+          <View style={styles.accounts}>
+            <Text style={styles.labels}>Don't have an account?</Text>
+            <TouchableOpacity onPress={() => navigation.navigate(SignUpScreen)}>
+              <Text style={styles.logIns}> Sign Up </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </SafeAreaView>
     </View>
@@ -36,12 +74,40 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
   },
-  logIn: {
+  input: {
     flex: 1,
     backgroundColor: "white",
     paddingHorizontal: 8,
     paddingTop: 8,
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
+  },
+  inputfields: {
+    margin: 10,
+  },
+  label: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  text: {
+    color: "gray",
+    fontSize: 15,
+    fontWeight: "600",
+    textAlign: "right",
+    marginTop: 10,
+  },
+  labels: {
+    color: "black",
+    fontSize: 14,
+  },
+  logIns: {
+    color: "#FFD166",
+    fontWeight: "800",
+    fontSize: 14,
+  },
+  accounts: {
+    marginLeft: 90,
+    flexDirection: "row",
+    textAlign: "center",
   },
 });
