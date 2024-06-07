@@ -67,7 +67,7 @@ const WelcomeScreen = ({ navigation }) => {
           <View style={styles.account}>
             <Text style={styles.text}>Don't have an account?</Text>
             <TouchableOpacity onPress={() => navigation.navigate(SignUpScreen)}>
-              <Text style={styles.logIn}> Sign Up </Text>
+              <Text style={styles.signUp}> Sign Up </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -87,11 +87,11 @@ const styles = StyleSheet.create({
     color: "#FFD166",
     textAlign: "center",
     fontWeight: "bold",
-    marginTop: 100,
+    marginTop: 70,
   },
   image: {
-    marginTop: 60,
-    marginBottom: 20,
+    marginTop: 50,
+    marginBottom: 30,
     borderRadius: 350,
     width: 350,
     height: 350,
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 14,
   },
-  logIn: {
+  signUp: {
     color: "#FFD166",
     fontWeight: "bold",
     fontSize: 14,

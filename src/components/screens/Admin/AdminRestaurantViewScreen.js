@@ -7,11 +7,10 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
   //Initialisations
   const { restaurant, onDelete, onModify } = route.params;
 
-
   const Header = () => {
     return (
       <View style={styles.header}>
-        <Text style={styles.headerText}>{restaurant.RestaurantName}</Text>
+        {/* <Text style={styles.headerText}>{restaurant.RestaurantName}</Text> */}
       </View>
     );
   };
@@ -25,7 +24,6 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
   //View
   return (
     <Screen>
-
       <Header />
 
       <RestaurantView
@@ -36,7 +34,6 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
     </Screen>
   );
 };
-
 
 const styles = StyleSheet.create({
   header: {
@@ -53,6 +50,5 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
 });
-
 
 export default AdminRestaurantViewScreen;
