@@ -12,11 +12,13 @@ const restaurants = [
     RestaurantAddress: " 105 Clarence St, Kingston upon Thames KT1 1QL",
     RestaurantTelephone: " 020 3815 9538",
     RestaurantMenu: "https://www.wingstop.co.uk/menu",
+
     Intro:
       "Wingstop is the ultimate experience for iconic wing flavours to enjoy with family and friends. Crispy chicken tenders available in any of our 10 house flavours.",
     HalalStatus: "Fully Halal",
     Certifications: "HFA",
     Alcohol: "Alcohol Free",
+
   },
   // {
   //   RestaurantId: 2,

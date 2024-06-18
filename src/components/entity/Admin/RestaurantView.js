@@ -1,17 +1,21 @@
 
 import {
   Alert,
+
   FlatList,
   Image,
   Linking,
   ScrollView,
+
   StyleSheet,
   Text,
   TouchableOpacity,
   Vibration,
   View,
 } from "react-native";
+
 import { useState } from "react";
+
 import FullWidthImage from "react-native-fullwidth-image";
 import { AboutButton, Button, ButtonTray } from "../../UI/Buttons.js";
 import Icons from "../../UI/Icons";
@@ -39,6 +43,10 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
       console.error("Couldn't load page", err)
     );
   };
+
+  return (
+
+
 
   const renderContent = () => {
     switch (activeSection) {
@@ -77,6 +85,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
     }
   };
 
+
   return (
       <View>
         <Text>
@@ -86,10 +95,12 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
         <Text>
           <Text style={styles.boldText}> Telephone Number: </Text>
           <Text style={styles.mainText}>{restaurant.RestaurantTelephone} </Text>
+
         </Text>
         <Text>
           <Text style={styles.boldText}> Menu: </Text>
           <TouchableOpacity onPress={openMenu}>
+
             <Text style={styles.mainText}> {restaurant.RestaurantMenu} </Text>
           </TouchableOpacity>
         </Text>
@@ -113,6 +124,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
           </ButtonTray>
           {renderContent()}
         </View>
+
       </View>
       <View style={styles.restaurantContainer}></View>
 
@@ -160,11 +172,13 @@ const styles = StyleSheet.create({
   boldText: {
     fontSize: 16,
     fontWeight: "bold",
+
     color: "#FFD166",
   },
   mainText: {
     fontSize: 14,
     fontWeight: "600",
+
     margin: 4,
     marginLeft: 5,
     color: "white",
