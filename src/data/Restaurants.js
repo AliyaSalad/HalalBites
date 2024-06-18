@@ -8,6 +8,7 @@ const restaurants = [
     RestaurantName: "Wingstop",
     RestaurantImage:
       "https://www.tastingtable.com/img/gallery/every-wingstop-flavor-ranked-worst-to-best/intro-1687882750.jpg",
+
     RestaurantAddress: " 105 Clarence St, Kingston upon Thames KT1 1QL",
     RestaurantTelephone: " 020 3815 9538",
     RestaurantMenu: "https://www.wingstop.co.uk/menu",
@@ -44,5 +45,6 @@ const restaurants = [
   //     RestaurantTelephone:
   //     RestaurantMenu:
   // },
+
 ];
 export default restaurants;

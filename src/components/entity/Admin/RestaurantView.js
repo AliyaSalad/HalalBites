@@ -1,3 +1,4 @@
+
 import {
   Alert,
   FlatList,
@@ -77,14 +78,6 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={{ uri: restaurant.RestaurantImage }}
-        style={styles.image}
-      />
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>{restaurant.RestaurantName} </Text>
-      </View>
       <View>
         <Text>
           <Text style={styles.boldText}> Address: </Text>
@@ -162,7 +155,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   titleContainer: {
-    paddingBottom: 5,
+
   },
   boldText: {
     fontSize: 16,
@@ -175,13 +168,7 @@ const styles = StyleSheet.create({
     margin: 4,
     marginLeft: 5,
     color: "white",
-  },
-  text: {
-    fontSize: 14,
-    fontWeight: "600",
-    margin: 4,
-    marginLeft: 5,
-    // color: "white",
+
   },
 });
 

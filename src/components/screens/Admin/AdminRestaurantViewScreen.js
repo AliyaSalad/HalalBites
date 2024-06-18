@@ -7,6 +7,7 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
   //Initialisations
   const { restaurant, onDelete, onModify } = route.params;
 
+
   //State
 
   //Handlers
@@ -16,6 +17,7 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
   //View
   return (
     <Screen>
+
       <RestaurantView
         restaurant={restaurant}
         onDelete={onDelete}
@@ -26,5 +28,6 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
 };
 
 const styles = StyleSheet.create({});
+
 
 export default AdminRestaurantViewScreen;
