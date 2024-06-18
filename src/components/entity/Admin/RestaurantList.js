@@ -11,20 +11,6 @@ import { Card, CardImage } from "react-native-material-cards";
 import restaurants from "../../../data/Restaurants";
 
 const RestaurantList = ({ restaurants, onSelect }) => {
-  //   return (
-  //     <ScrollView style={styles.container}>
-  //       {restaurants.map((restaurant) => {
-  //         return (
-  //           <RestaurantItem
-  //             key={restaurant.RestaurantId}
-  //             restaurant={restaurant}
-  //             onSelect={onSelect}
-  //           />
-  //         );
-  //       })}
-  //     </ScrollView>
-  //   );
-  // };
   return (
     <View style={styles.restaurantContainer}>
       {restaurants.map((restaurant) => (

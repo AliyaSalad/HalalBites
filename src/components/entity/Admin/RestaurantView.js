@@ -1,20 +1,24 @@
 import {
   Alert,
+  FlatList,
   Image,
   Linking,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   Vibration,
   View,
 } from "react-native";
+import { useState } from "react";
 import FullWidthImage from "react-native-fullwidth-image";
-import { Button, ButtonTray } from "../../UI/Buttons.js";
+import { AboutButton, Button, ButtonTray } from "../../UI/Buttons.js";
 import Icons from "../../UI/Icons";
 
 const RestaurantView = ({ restaurant, onDelete, onModify }) => {
   //Initialisation
   //State
+  const [activeSection, setActiveSection] = useState("About");
   //Handlers
 
   const handleDelete = () => {
@@ -25,7 +29,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
   const requestDelete = () =>
     Alert.alert(
       "Delete warning",
-      `Are you sure that you want to delete Restaurant ${restaurant.RestaurantId} ${restaurant.RestaurantName}`,
+      `Are you sure that you want to delete  ${restaurant.RestaurantName}`,
       [{ text: "Cancel" }, { text: "Delete", onPress: handleDelete }]
     );
 
@@ -34,6 +38,44 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
       console.error("Couldn't load page", err)
     );
   };
+
+  const renderContent = () => {
+    switch (activeSection) {
+      case "About":
+        return (
+          <ScrollView style={styles.aboutContainer}>
+            <Text style={styles.boldText}> About: </Text>
+            <Text style={styles.text}>{restaurant.Intro} </Text>
+            <Text style={styles.boldText}>Halal Status:</Text>
+            <Text style={styles.text}>{restaurant.HalalStatus} </Text>
+            <Text style={styles.boldText}>Certifications:</Text>
+            <Text style={styles.text}>{restaurant.Certifications} </Text>
+            <Text style={styles.boldText}>Alcohol:</Text>
+            <Text style={styles.text}>{restaurant.Alcohol} </Text>
+          </ScrollView>
+        );
+      case "Photos":
+        return (
+          <View style={styles.photosContainer}>
+            {
+              /* {restaurant.Photos.map((photo, index) => (
+              <Image key={index} source={{ uri: photo }} style={styles.photo} />
+            ))} */
+              <Text style={styles.text}>Photos go here...</Text>
+            }
+          </View>
+        );
+      case "Review":
+        return (
+          <View style={styles.reviewContainer}>
+            <Text style={styles.text}>User reviews go here...</Text>
+          </View>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Image
@@ -46,20 +88,41 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
       <View>
         <Text>
           <Text style={styles.boldText}> Address: </Text>
-          <Text style={styles.text}>{restaurant.RestaurantAddress} </Text>
+          <Text style={styles.mainText}>{restaurant.RestaurantAddress} </Text>
         </Text>
         <Text>
           <Text style={styles.boldText}> Telephone Number: </Text>
-          <Text style={styles.text}>{restaurant.RestaurantTelephone} </Text>
+          <Text style={styles.mainText}>{restaurant.RestaurantTelephone} </Text>
         </Text>
         <Text>
           <Text style={styles.boldText}> Menu: </Text>
           <TouchableOpacity onPress={openMenu}>
-            <Text style={styles.text}> View </Text>
+            <Text style={styles.mainText}> {restaurant.RestaurantMenu} </Text>
           </TouchableOpacity>
         </Text>
+        <View style={styles.buttonContainer}>
+          <ButtonTray>
+            <AboutButton
+              label="About"
+              onClick={() => setActiveSection("About")}
+              isActive={activeSection === "About"}
+            />
+            <AboutButton
+              label="Photos"
+              onClick={() => setActiveSection("Photos")}
+              isActive={activeSection === "Photos"}
+            />
+            <AboutButton
+              label="Review"
+              onClick={() => setActiveSection("Review")}
+              isActive={activeSection === "Review"}
+            />
+          </ButtonTray>
+          {renderContent()}
+        </View>
       </View>
       <View style={styles.restaurantContainer}></View>
+
       <ButtonTray>
         <Button icon={<Icons.Edit />} label="Modify" onClick={onModify} />
         <Button
@@ -74,8 +137,18 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
 
 const styles = StyleSheet.create({
   container: {
-    // gap: 15,
     flex: 1,
+  },
+  aboutContainer: {
+    margin: 15,
+    backgroundColor: "white",
+  },
+  buttonContainer: {
+    padding: 5,
+    marginTop: 5,
+    backgroundColor: "white",
+    borderTopLeftRadius: 7,
+    borderTopRightRadius: 7,
   },
   image: {
     borderRadius: 7,
@@ -94,14 +167,21 @@ const styles = StyleSheet.create({
   boldText: {
     fontSize: 16,
     fontWeight: "bold",
-    // textTransform: "uppercase",
     color: "#FFD166",
   },
-  text: {
+  mainText: {
     fontSize: 14,
+    fontWeight: "600",
     margin: 4,
     marginLeft: 5,
     color: "white",
+  },
+  text: {
+    fontSize: 14,
+    fontWeight: "600",
+    margin: 4,
+    marginLeft: 5,
+    // color: "white",
   },
 });
 

@@ -15,6 +15,21 @@ export const Button = ({ label, onClick, icon }) => {
   );
 };
 
+export const AboutButton = ({ label, onClick, icon, isActive }) => {
+  return (
+    <Pressable
+      onPress={onClick}
+      style={[
+        styles.aboutButton,
+        isActive ? styles.activeButton : styles.inactiveButton,
+      ]}
+    >
+      {icon ? icon : null}
+      <Text style={styles.label}>{label}</Text>
+    </Pressable>
+  );
+};
+
 export const WelcomeButton = ({ label, onClick, icon }) => {
   return (
     <Pressable onPress={onClick} style={styles.welcomeButton}>
@@ -27,17 +42,6 @@ export const WelcomeButton = ({ label, onClick, icon }) => {
 export const WelcomeButtonTray = ({ children }) => {
   return <View style={styles.welcomeButtonTray}>{children}</View>;
 };
-
-// export const CircularButton = ({ text, onClick, icon}) => {
-
-//     return (
-
-//         <Pressable onPress={onClick} style={styles.circularButton}>
-//             {icon ? icon : null}
-//             <Text style={styles.text}>{text}</Text>
-//         </Pressable>
-//     );
-// };
 
 export const CircularButton = ({ text, onClick, icon }) => {
   return (
@@ -89,6 +93,25 @@ const styles = StyleSheet.create({
     gap: 5,
   },
 
+  aboutButton: {
+    minHeight: 50,
+    borderWidth: 1,
+    borderRadius: 20,
+    borderColor: "black",
+    backgroundColor: "#FFD166",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 5,
+    flex: 1,
+    flexDirection: "row",
+    // gap: 5,
+  },
+  activeButton: {
+    backgroundColor: "#FFD166",
+  },
+  inactiveButton: {
+    backgroundColor: "grey",
+  },
   welcomeButton: {
     width: 200,
     height: 50,
