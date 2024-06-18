@@ -2,11 +2,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import useAuth from "./hooks/useAuth";
-
-import UserListScreen from "./src/components/screens/User/RestaurantListScreen";
 import AdminRestaurantListScreen from "./src/components/screens/Admin/AdminRestaurantListScreen";
 import AdminRestaurantViewScreen from "./src/components/screens/Admin/AdminRestaurantViewScreen";
-import UserRestaurantViewScreen from "./src/components/screens/User/RestaurantViewScreen";
 import RestaurantModifyScreen from "./src/components/screens/Admin/RestaurantModifyScreen";
 import RestaurantAddScreen from "./src/components/screens/Admin/RestaurantAddScreen";
 import FavouritesListScreen from "./src/components/screens/User/FavouritesListScreen";

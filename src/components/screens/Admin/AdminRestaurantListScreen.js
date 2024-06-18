@@ -46,7 +46,7 @@ const AdminRestaurantListScreen = ({ navigation }) => {
 
   const onModify = (restaurant) => {
     handleModify(restaurant);
-    navigation.navigate("AdminRestaurantListScreen");
+    navigation.navigate("AdminListScreen");
   };
 
   const goToViewScreen = (restaurant) =>
