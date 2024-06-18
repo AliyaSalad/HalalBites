@@ -1,3 +1,4 @@
+
 import {
   Alert,
   Image,
@@ -8,6 +9,7 @@ import {
   Vibration,
   View,
 } from "react-native";
+
 import FullWidthImage from "react-native-fullwidth-image";
 import { Button, ButtonTray } from "../../UI/Buttons.js";
 import Icons from "../../UI/Icons";
@@ -35,14 +37,27 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
     );
   };
   return (
-    <View style={styles.container}>
-      <Image
-        source={{ uri: restaurant.RestaurantImage }}
-        style={styles.image}
-      />
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>{restaurant.RestaurantName} </Text>
-      </View>
+
+    // <View style={styles.container}>
+    //   {restaurant.RestuarantImage ? (
+    //     <FullWidthImage style={styles.image} />
+    //   ) : null}
+
+    //   <View>
+    //     <Text style={styles.text}>{restaurant.RestaurantName}</Text>
+    //   </View>
+    //   <ButtonTray>
+    //     <Button icon={<Icons.Edit />} label="Modify" onClick={onModify} />
+    //     <Button
+    //       icon={<Icons.Delete />}
+    //       label="Delete"
+    //       onClick={requestDelete}
+    //     />
+    //   </ButtonTray>
+    // </View>
+
+>
+
       <View>
         <Text>
           <Text style={styles.boldText}> Address: </Text>
@@ -60,6 +75,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
         </Text>
       </View>
       <View style={styles.restaurantContainer}></View>
+
       <ButtonTray>
         <Button icon={<Icons.Edit />} label="Modify" onClick={onModify} />
         <Button
@@ -89,7 +105,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   titleContainer: {
-    paddingBottom: 5,
+
   },
   boldText: {
     fontSize: 16,
@@ -102,7 +118,23 @@ const styles = StyleSheet.create({
     margin: 4,
     marginLeft: 5,
     color: "white",
+
   },
+  // infoTray: {
+  //   gap: 5,
+  // },
+  // text: {
+  //   fontSize: 16,
+  //   fontWeight: "bold",
+  //   color: "white",
+  // },
+  // boldText: {
+  //   fontSize: 16,
+  //   fontWeight: "bold",
+  // },
+  // dimText: {
+  //   color: "grey",
+  // },
 });
 
 export default RestaurantView;
