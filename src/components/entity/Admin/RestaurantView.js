@@ -1,4 +1,13 @@
-import { Alert, Image, StyleSheet, Text, Vibration, View } from "react-native";
+import {
+  Alert,
+  Image,
+  Linking,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Vibration,
+  View,
+} from "react-native";
 import FullWidthImage from "react-native-fullwidth-image";
 import { Button, ButtonTray } from "../../UI/Buttons.js";
 import Icons from "../../UI/Icons";
@@ -20,25 +29,12 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
       [{ text: "Cancel" }, { text: "Delete", onPress: handleDelete }]
     );
 
+  const openMenu = () => {
+    Linking.openURL(restaurant.RestaurantMenu).catch((err) =>
+      console.error("Couldn't load page", err)
+    );
+  };
   return (
-    // <View style={styles.container}>
-    //   {restaurant.RestuarantImage ? (
-    //     <FullWidthImage style={styles.image} />
-    //   ) : null}
-
-    //   <View>
-    //     <Text style={styles.text}>{restaurant.RestaurantName}</Text>
-    //   </View>
-    //   <ButtonTray>
-    //     <Button icon={<Icons.Edit />} label="Modify" onClick={onModify} />
-    //     <Button
-    //       icon={<Icons.Delete />}
-    //       label="Delete"
-    //       onClick={requestDelete}
-    //     />
-    //   </ButtonTray>
-    // </View>
-
     <View style={styles.container}>
       <Image
         source={{ uri: restaurant.RestaurantImage }}
@@ -47,6 +43,23 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{restaurant.RestaurantName} </Text>
       </View>
+      <View>
+        <Text>
+          <Text style={styles.boldText}> Address: </Text>
+          <Text style={styles.text}>{restaurant.RestaurantAddress} </Text>
+        </Text>
+        <Text>
+          <Text style={styles.boldText}> Telephone Number: </Text>
+          <Text style={styles.text}>{restaurant.RestaurantTelephone} </Text>
+        </Text>
+        <Text>
+          <Text style={styles.boldText}> Menu: </Text>
+          <TouchableOpacity onPress={openMenu}>
+            <Text style={styles.text}> View </Text>
+          </TouchableOpacity>
+        </Text>
+      </View>
+      <View style={styles.restaurantContainer}></View>
       <ButtonTray>
         <Button icon={<Icons.Edit />} label="Modify" onClick={onModify} />
         <Button
@@ -78,21 +91,18 @@ const styles = StyleSheet.create({
   titleContainer: {
     paddingBottom: 5,
   },
-  // infoTray: {
-  //   gap: 5,
-  // },
-  // text: {
-  //   fontSize: 16,
-  //   fontWeight: "bold",
-  //   color: "white",
-  // },
-  // boldText: {
-  //   fontSize: 16,
-  //   fontWeight: "bold",
-  // },
-  // dimText: {
-  //   color: "grey",
-  // },
+  boldText: {
+    fontSize: 16,
+    fontWeight: "bold",
+    // textTransform: "uppercase",
+    color: "#FFD166",
+  },
+  text: {
+    fontSize: 14,
+    margin: 4,
+    marginLeft: 5,
+    color: "white",
+  },
 });
 
 export default RestaurantView;
