@@ -1,12 +1,9 @@
-
 import {
   Alert,
-
   FlatList,
   Image,
   Linking,
   ScrollView,
-
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -43,10 +40,6 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
       console.error("Couldn't load page", err)
     );
   };
-
-  return (
-
-
 
   const renderContent = () => {
     switch (activeSection) {
@@ -85,8 +78,15 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
     }
   };
 
-
   return (
+    <View style={styles.container}>
+      <Image
+        source={{ uri: restaurant.RestaurantImage }}
+        style={styles.image}
+      />
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>{restaurant.RestaurantName} </Text>
+      </View>
       <View>
         <Text>
           <Text style={styles.boldText}> Address: </Text>
@@ -95,12 +95,10 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
         <Text>
           <Text style={styles.boldText}> Telephone Number: </Text>
           <Text style={styles.mainText}>{restaurant.RestaurantTelephone} </Text>
-
         </Text>
         <Text>
           <Text style={styles.boldText}> Menu: </Text>
           <TouchableOpacity onPress={openMenu}>
-
             <Text style={styles.mainText}> {restaurant.RestaurantMenu} </Text>
           </TouchableOpacity>
         </Text>
@@ -124,7 +122,6 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
           </ButtonTray>
           {renderContent()}
         </View>
-
       </View>
       <View style={styles.restaurantContainer}></View>
 
@@ -166,9 +163,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
   },
-  titleContainer: {
-
-  },
+  titleContainer: {},
   boldText: {
     fontSize: 16,
     fontWeight: "bold",
@@ -182,7 +177,6 @@ const styles = StyleSheet.create({
     margin: 4,
     marginLeft: 5,
     color: "white",
-
   },
 });
 
