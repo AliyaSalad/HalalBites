@@ -7,13 +7,6 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
   //Initialisations
   const { restaurant, onDelete, onModify } = route.params;
 
-  const Header = () => {
-    return (
-      <View style={styles.header}>
-        {/* <Text style={styles.headerText}>{restaurant.RestaurantName}</Text> */}
-      </View>
-    );
-  };
 
   //State
 
@@ -24,7 +17,6 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
   //View
   return (
     <Screen>
-      <Header />
 
       <RestaurantView
         restaurant={restaurant}
@@ -35,20 +27,7 @@ const AdminRestaurantViewScreen = ({ navigation, route }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  header: {
-    height: 30,
-    backgroundColor: "#004226",
-    justifyContent: "center",
-    alignContent: "center",
-  },
-  headerText: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "bold",
-    justifyContent: "center",
-    alignContent: "center",
-  },
-});
+const styles = StyleSheet.create({});
+
 
 export default AdminRestaurantViewScreen;
