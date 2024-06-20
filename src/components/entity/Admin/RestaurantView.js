@@ -1,12 +1,9 @@
-
 import {
   Alert,
-
   FlatList,
   Image,
   Linking,
   ScrollView,
-
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -17,6 +14,7 @@ import {
 import { useState } from "react";
 
 import FullWidthImage from "react-native-fullwidth-image";
+import { AboutButton, Button, ButtonTray } from "../../UI/Buttons.js";
 import { AboutButton, Button, ButtonTray } from "../../UI/Buttons.js";
 import Icons from "../../UI/Icons";
 
@@ -44,15 +42,11 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
     );
   };
 
-  return (
-
-
-
   const renderContent = () => {
     switch (activeSection) {
       case "About":
         return (
-          <ScrollView style={styles.aboutContainer}>
+          <ScrollView style={styles.contentContainer}>
             <Text style={styles.boldText}> About: </Text>
             <Text style={styles.text}>{restaurant.Intro} </Text>
             <Text style={styles.boldText}>Halal Status:</Text>
@@ -65,7 +59,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
         );
       case "Photos":
         return (
-          <View style={styles.photosContainer}>
+          <View style={styles.contentContainer}>
             {
               /* {restaurant.Photos.map((photo, index) => (
               <Image key={index} source={{ uri: photo }} style={styles.photo} />
@@ -76,7 +70,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
         );
       case "Review":
         return (
-          <View style={styles.reviewContainer}>
+          <View style={styles.contentContainer}>
             <Text style={styles.text}>User reviews go here...</Text>
           </View>
         );
@@ -85,8 +79,15 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
     }
   };
 
-
   return (
+    <View style={styles.container}>
+      <Image
+        source={{ uri: restaurant.RestaurantImage }}
+        style={styles.image}
+      />
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>{restaurant.RestaurantName} </Text>
+      </View>
       <View>
         <Text>
           <Text style={styles.boldText}> Address: </Text>
@@ -95,12 +96,10 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
         <Text>
           <Text style={styles.boldText}> Telephone Number: </Text>
           <Text style={styles.mainText}>{restaurant.RestaurantTelephone} </Text>
-
         </Text>
         <Text>
           <Text style={styles.boldText}> Menu: </Text>
           <TouchableOpacity onPress={openMenu}>
-
             <Text style={styles.mainText}> {restaurant.RestaurantMenu} </Text>
           </TouchableOpacity>
         </Text>
@@ -124,7 +123,6 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
           </ButtonTray>
           {renderContent()}
         </View>
-
       </View>
       <View style={styles.restaurantContainer}></View>
 
@@ -144,7 +142,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  aboutContainer: {
+
+  contentContainer: {
     margin: 15,
     backgroundColor: "white",
   },
@@ -166,9 +165,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "white",
   },
-  titleContainer: {
-
-  },
+  titleContainer: {},
   boldText: {
     fontSize: 16,
     fontWeight: "bold",
@@ -182,7 +179,6 @@ const styles = StyleSheet.create({
     margin: 4,
     marginLeft: 5,
     color: "white",
-
   },
 });
 
