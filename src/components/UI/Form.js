@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
+    fontWeight: "bold",
     color: "white",
     alignSelf: "center",
   },
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 7,
     borderWidth: 1,
-    borderColor: "lightgray",
+    backgroundColor: "white",
     justifyContent: "center",
     paddingLeft: 10,
     paddingRight: 10,
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   itemLabel: {
-    color: "grey",
+    color: "white",
     fontSize: 16,
     marginBottom: 5,
   },
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
     height: 50,
     paddingLeft: 10,
     fontSize: 16,
-    backgroundColor: "white",
+    backgroundColor: "#F5F5F5",
     borderRadius: 15,
     borderWidth: 1,
     borderColor: "lightgray",
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   modalContent: {
-    backgroundColor: "white",
+    backgroundColor: "#F5F5F5",
     borderRadius: 10,
     padding: 20,
     maxHeight: 300,

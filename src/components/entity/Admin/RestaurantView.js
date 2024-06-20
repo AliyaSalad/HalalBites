@@ -45,7 +45,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
     switch (activeSection) {
       case "About":
         return (
-          <ScrollView style={styles.aboutContainer}>
+          <ScrollView style={styles.contentContainer}>
             <Text style={styles.boldText}> About: </Text>
             <Text style={styles.text}>{restaurant.Intro} </Text>
             <Text style={styles.boldText}>Halal Status:</Text>
@@ -58,7 +58,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
         );
       case "Photos":
         return (
-          <View style={styles.photosContainer}>
+          <View style={styles.contentContainer}>
             {
               /* {restaurant.Photos.map((photo, index) => (
               <Image key={index} source={{ uri: photo }} style={styles.photo} />
@@ -69,7 +69,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
         );
       case "Review":
         return (
-          <View style={styles.reviewContainer}>
+          <View style={styles.contentContainer}>
             <Text style={styles.text}>User reviews go here...</Text>
           </View>
         );
@@ -141,7 +141,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  aboutContainer: {
+
+  contentContainer: {
     margin: 15,
     backgroundColor: "white",
   },
