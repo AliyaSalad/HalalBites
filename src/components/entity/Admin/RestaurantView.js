@@ -15,7 +15,6 @@ import { useState } from "react";
 
 import FullWidthImage from "react-native-fullwidth-image";
 import { AboutButton, Button, ButtonTray } from "../../UI/Buttons.js";
-import { AboutButton, Button, ButtonTray } from "../../UI/Buttons.js";
 import Icons from "../../UI/Icons";
 
 const RestaurantView = ({ restaurant, onDelete, onModify }) => {

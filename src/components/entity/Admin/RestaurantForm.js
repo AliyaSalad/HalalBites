@@ -50,8 +50,8 @@ const RestaurantForm = ({ originalRestaurant, onSubmit, onCancel }) => {
       />
       <Form.InputText
         label="About the Restaurant"
-        value={restaurant.RestaurantName}
-        onChange={(value) => handleChange("RestaurantName", value)}
+        value={restaurant.Intro}
+        onChange={(value) => handleChange("Intro", value)}
       />
       <Form.InputText
         label="Menu link"

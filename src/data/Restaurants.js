@@ -1,7 +1,3 @@
-import HalalStatus from "./HalalStatus";
-import Certifications from "./Certifications";
-import Alcohol from "./Alcohol";
-
 const restaurants = [
   {
     RestaurantId: 1,
