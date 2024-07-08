@@ -7,26 +7,24 @@ import {
   View,
 } from "react-native";
 import Form from "../UI/Form";
-import Screen from "../layout/Screen";
 import { WelcomeButton, WelcomeButtonTray } from "../UI/Buttons";
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../../config/firebase";
 
-export default function SignUpScreen({ navigation }) {
-  const LoginScreen = () => {
-    navigation.navigate("LoginScreen");
-  };
+export default function SignUpScreen() {
+  const navigation = useNavigation();
+
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  //   const LoginScreen = () => {
-  //     navigation.navigate("LoginScreen");
-  //   };
 
   const handleSubmit = async () => {
+    console.log("handleSubmit called");
     if (email && password) {
       try {
         await createUserWithEmailAndPassword(auth, email, password);
+        navigation.navigate("WelcomeScreen");
       } catch (err) {
         console.log("got error: ", err.message);
       }
@@ -72,7 +70,9 @@ export default function SignUpScreen({ navigation }) {
           </View>
           <View style={styles.accounts}>
             <Text style={styles.labels}>Already have an account?</Text>
-            <TouchableOpacity onPress={() => navigation.navigate(LoginScreen)}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("LoginScreen")}
+            >
               <Text style={styles.logIns}> Log In </Text>
             </TouchableOpacity>
           </View>

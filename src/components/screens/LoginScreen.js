@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import Form from "../UI/Form";
-import Screen from "../layout/Screen";
+
 import { WelcomeButton, WelcomeButtonTray } from "../UI/Buttons";
 
 export default function LoginScreen({ navigation }) {

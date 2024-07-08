@@ -12,33 +12,8 @@ import WelcomeScreen from "./src/components/screens/WelcomeScreen";
 import LoginScreen from "./src/components/screens/LoginScreen";
 import SignUpScreen from "./src/components/screens/SignUpScreen";
 
-import Icons from "./src/components/UI/Icons";
-import restaurants from "./src/data/Restaurants";
-
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-
-// const UserTabNavigator = () => (
-//   <Tab.Navigator
-//     screenOptions={{
-//       headerTitle: "Halal Bites",
-//       headerStyle: { backgroundColor: "#004226" },
-//       headerTintColor: "#FFD166",
-//       headerTitleStyle: {
-//         fontWeight: "bold",
-//       },
-//     }}
-//   >
-//     <Tab.Screen name="Restaurants" component={UserListScreen} />
-//     <Tab.Screen name="Favourites" component={FavouritesListScreen} />
-//     <Tab.Screen
-//       tabBarIcon={<Icons.Account />}
-//       name="Profile"
-//       component={ProfileScreen}
-//     />
-//   </Tab.Navigator>
-// );
-
 const AdminTabNavigator = () => (
   <Tab.Navigator
     screenOptions={{
@@ -62,28 +37,11 @@ const App = () => {
     return (
       <NavigationContainer>
         <Stack.Navigator initialRouteName="AdminListScreen">
-          {/* <Stack.Screen
-            name="UserListScreen"
-            component={UserTabNavigator}
-            options={{ headerShown: false }}
-          /> */}
           <Stack.Screen
             name="AdminListScreen"
             component={AdminTabNavigator}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="UserRestaurantViewScreen"
-            component={UserRestaurantViewScreen}
-            options={{
-              headerTitle: "Restaurant Details",
-              headerStyle: {
-                backgroundColor: "#004226",
-              },
-              headerTintColor: "#FFD166",
-              headerTitleStyle: { fontWeight: "bold" },
-            }}
-          /> */}
           <Stack.Screen
             name="AdminRestaurantViewScreen"
             component={AdminRestaurantViewScreen}
@@ -128,28 +86,11 @@ const App = () => {
             component={SignUpScreen}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="UserListScreen"
-            component={UserTabNavigator}
-            options={{ headerShown: false }}
-          /> */}
           <Stack.Screen
             name="AdminListScreen"
             component={AdminTabNavigator}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
-            name="UserRestaurantViewScreen"
-            component={UserRestaurantViewScreen}
-            options={{
-              headerTitle: "Restaurant Details",
-              headerStyle: {
-                backgroundColor: "#004226",
-              },
-              headerTintColor: "#FFD166",
-              headerTitleStyle: { fontWeight: "bold" },
-            }}
-          /> */}
           <Stack.Screen
             name="AdminRestaurantViewScreen"
             component={AdminRestaurantViewScreen}
