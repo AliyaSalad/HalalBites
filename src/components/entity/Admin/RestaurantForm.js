@@ -6,6 +6,13 @@ import Form from "../../UI/Form";
 const defaultRestaurant = {
   RestaurantId: null,
   RestaurantName: null,
+  RestaurantAddress: null,
+  RestaurantTelephone: null,
+  Intro: null,
+  RestaurantMenu: null,
+  HalalStatus: null,
+  Certifications: null,
+  Alcohol: null,
 };
 
 const RestaurantForm = ({ originalRestaurant, onSubmit, onCancel }) => {
