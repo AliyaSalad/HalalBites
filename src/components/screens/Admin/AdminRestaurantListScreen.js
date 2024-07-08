@@ -1,16 +1,13 @@
-import { LogBox, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
+import { useState } from "react";
 import Screen from "../../layout/Screen";
 import initialRestaurants from "../../../data/Restaurants";
 import RestaurantList from "../../entity/Admin/RestaurantList";
-import { useState } from "react";
 import { Button, ButtonTray } from "../../UI/Buttons";
 import Icons from "../../UI/Icons";
 
 const AdminRestaurantListScreen = ({ navigation }) => {
   //Initialisations
-  LogBox.ignoreLogs([
-    `Non-serializable values were found in the navigation state`,
-  ]);
 
   //State
   const [restaurants, setRestaurants] = useState(initialRestaurants);

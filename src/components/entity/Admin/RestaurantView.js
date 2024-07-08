@@ -1,6 +1,5 @@
 import {
   Alert,
-  FlatList,
   Image,
   Linking,
   ScrollView,
@@ -10,10 +9,7 @@ import {
   Vibration,
   View,
 } from "react-native";
-
 import { useState } from "react";
-
-import FullWidthImage from "react-native-fullwidth-image";
 import { AboutButton, Button, ButtonTray } from "../../UI/Buttons.js";
 import Icons from "../../UI/Icons";
 
@@ -59,12 +55,7 @@ const RestaurantView = ({ restaurant, onDelete, onModify }) => {
       case "Photos":
         return (
           <View style={styles.contentContainer}>
-            {
-              /* {restaurant.Photos.map((photo, index) => (
-              <Image key={index} source={{ uri: photo }} style={styles.photo} />
-            ))} */
-              <Text style={styles.text}>Photos go here...</Text>
-            }
+            {<Text style={styles.text}>Photos go here...</Text>}
           </View>
         );
       case "Review":

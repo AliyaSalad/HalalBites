@@ -1,5 +1,6 @@
 import {
   Image,
+  LogBox,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -8,33 +9,12 @@ import {
 } from "react-native";
 import Screen from "../layout/Screen";
 import { WelcomeButton, WelcomeButtonTray } from "../UI/Buttons";
-import Icons from "../UI/Icons";
-
-// const WelcomeScreen = ({ navigation }) => {
-//   const goToUserList = () => {
-//     navigation.navigate("UserListScreen");
-//   };
-//   const goToAdminList = () => {
-//     navigation.navigate("AdminListScreen");
-//   };
-
-//   return (
-//     <Screen>
-//       <View style={styles.container}>
-//         <Text style={styles.title}>Halal Bites</Text>
-
-//         <View>
-//           <WelcomeButtonTray>
-//             <WelcomeButton label="User" onClick={goToUserList} />
-//             <WelcomeButton label="Admin" onClick={goToAdminList} />
-//           </WelcomeButtonTray>
-//         </View>
-//       </View>
-//     </Screen>
-//   );
-// };
 
 const WelcomeScreen = ({ navigation }) => {
+  LogBox.ignoreLogs([
+    `Non-serializable values were found in the navigation state`,
+  ]);
+
   const SignUpScreen = () => {
     navigation.navigate("SignUpScreen");
   };

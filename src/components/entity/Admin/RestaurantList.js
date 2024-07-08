@@ -1,14 +1,4 @@
-import {
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import RestaurantItem from "./RestaurantItem";
-import { Card, CardImage } from "react-native-material-cards";
-import restaurants from "../../../data/Restaurants";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const RestaurantList = ({ restaurants, onSelect }) => {
   return (
